@@ -13,6 +13,8 @@ from . import cxx_common
 @conf
 def mkspec_emscripten_configure(conf, major, minor, minimum=False,
                                 force_debug=False):
+
+    print('***emscripten_common.py::mkspec_emscripten_configure')
     """
     :param force_debug: Always compile with debugging flags, if true
     """
@@ -95,6 +97,7 @@ def mkspec_emscripten_configure(conf, major, minor, minimum=False,
 
 @conf
 def check_emscripten_version(conf, emscripten_cc, major, minor, minimum):
+    print('***emscripten_common.py::check_emscripten_version')
     try:
         p = subprocess.Popen(
             emscripten_cc + ['--version'],

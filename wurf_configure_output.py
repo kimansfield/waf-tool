@@ -20,6 +20,7 @@ class WurfConfigureOutput(WafConfigurationContext):
     cmd = 'configure'
 
     def init_dirs(self):
+        print('***wurf_configure_output.py::WurfConfigureOutput::init_dirs')
         # Waf calls this function to set the output directory.
         # Waf sets the output dir in the following order
         # 1) Check whether the -o option has been specified

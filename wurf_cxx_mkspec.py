@@ -16,6 +16,7 @@ mkspec_platforms = ['windows', 'linux', 'android', 'mac', 'ios', 'emscripten']
 
 @conf
 def get_mkspec_platform(conf):
+    print('***wurf_cxx_mkspect.py::get_mkspec_platform')
     # If the MKSPEC_PLATFORM is not set, we auto detect it.
     if not conf.env['MKSPEC_PLATFORM']:
         platform = Utils.unversioned_sys_platform()
@@ -30,6 +31,7 @@ def get_mkspec_platform(conf):
 
 @conf
 def set_mkspec_platform(conf, platform):
+    print('***wurf_cxx_mkspect.py::set_mkspec_platform')
     if conf.env['MKSPEC_PLATFORM']:
         conf.fatal("The mkspec platform could not be set to {0}, as it was "
                    "already set to {1}.".format(
@@ -45,11 +47,12 @@ def set_mkspec_platform(conf, platform):
 
 @conf
 def is_mkspec_platform(conf, platform):
+    print('***wurf_cxx_mkspect.py::is_mkspec_platform')
     return conf.get_mkspec_platform() == platform
 
 
 def options(opt):
-
+    print('***wurf_cxx_mkspect.py::options')
     opts = opt.add_option_group('Makespec options')
 
     opts.add_option(
@@ -115,7 +118,7 @@ def options(opt):
 
 
 def configure(conf):
-
+    print('***wurf_cxx_mkspect.py::configure')
     # Which mkspec should we use, by default, use the cxx_default
     # that simply fallbacks to use waf auto detect of compiler etc.
     mkspec = "cxx_default"

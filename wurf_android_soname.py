@@ -30,6 +30,7 @@ from waflib.TaskGen import feature, after_method
 @feature('cshlib', 'cxxshlib')
 @after_method('apply_link')
 def set_android_soname(self):
+    print('***wurf_android_soname.py::set_android_soname')
     """
     Task generator method, which will run after the apply_link method.
 

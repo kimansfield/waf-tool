@@ -8,6 +8,8 @@ Latest
 ------
 * tbd
 
+4.32.1
+-------
 4.31.0
 ------
 * Minor: Added mkspecs for g++ 9.2.

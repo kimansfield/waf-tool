@@ -18,7 +18,7 @@ from waflib.TaskGen import feature, before_method, after_method
 
 
 def options(opt):
-
+    print('***wurf_install_path.py::options')
     opts = opt.add_option_group('Install path options')
 
     opts.add_option(
@@ -42,6 +42,7 @@ def options(opt):
 
 
 def build(bld):
+    print('***wurf_install_path.py::build')
     # The install_path option only works correctly when the destdir value
     # is an empty string. Otherwise the destdir value would be prepended to
     # the install_path locations that are calculated in this file.
@@ -54,6 +55,7 @@ def build(bld):
 @feature('cshlib', 'cxxshlib')
 @before_method('apply_link')
 def update_shlib_install_path(self):
+    print('***wurf_install_path.py::update_shlib_install_path')
     """
     Sets the install_path attribute of shared library task generators before
     executing the apply_link method. This enables the installation of the
@@ -69,6 +71,7 @@ def update_shlib_install_path(self):
 @feature('cstlib', 'cxxstlib')
 @before_method('apply_link')
 def update_stlib_install_path(self):
+    print('***wurf_install_path.py::update_stlib_install_path')
     """
     Sets the install_path attribute of static library task generators before
     executing the apply_link method. This enables the installation of the
@@ -84,6 +87,7 @@ def update_stlib_install_path(self):
 @feature('cxxprogram', 'cprogram', 'pyext')
 @before_method('apply_link')
 def update_install_path(self):
+    print('***wurf_install_path.py::update_install_path')
     """
     Updates the install_path variable of the task generator before
     executing the apply_link method. This will override the install_path
@@ -97,6 +101,7 @@ def update_install_path(self):
 @feature('cxxprogram', 'cprogram', 'pyext')
 @after_method('apply_link')
 def change_relative_path_option(self):
+    print('***wurf_install_path.py::change_relative_path_option')
     """
     Overwrite the output paths for the install_task to preserver the
     the folder structure (relative to the project root)

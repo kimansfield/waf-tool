@@ -32,6 +32,7 @@ from waflib.TaskGen import feature, before_method, after_method
 @feature('limit_includes')
 @before_method('process_use')
 def store_default_includes(self):
+    print('***wurf_limit_includes.py::store_default_includes')
     """
     Stores the default system includes in self.env.DEFAULT_INCLUDES before
     running the "process_use" method. This is necessary for the MSVC compiler
@@ -44,6 +45,7 @@ def store_default_includes(self):
 @before_method('apply_incpaths')
 @after_method('process_use')
 def set_limited_includes(self):
+    print('***wurf_limit_includes.py::set_limited_includes')
     """
     Limits the available include paths based on the 'export_includes' list
     of the top-level task generators in the current 'use' list

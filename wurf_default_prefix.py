@@ -12,7 +12,7 @@ developers who need easy access to the compiled libraries and includes.
 
 
 def options(opt):
-
+    print('***wurf_default_prefix.py::options')
     # By default, we install to the "{PROJECT_NAME}_install" folder in
     # the local project folder.
     #

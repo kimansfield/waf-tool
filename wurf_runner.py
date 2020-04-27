@@ -56,7 +56,7 @@ run_tasks = []
 
 
 def options(opt):
-
+    print('***wurf_runner.py::options')
     opts = opt.add_option_group('Runner options')
 
     opts.add_option(
@@ -115,6 +115,7 @@ def options(opt):
 @after_method('process_use')
 @after_method('apply_link')
 def make_test(self):
+    print('***wurf_runner.py::make_test')
     if self.bld.has_tool_option('run_tests'):
         make_run(self, 'test')
 
@@ -123,6 +124,7 @@ def make_test(self):
 @after_method('process_use')
 @after_method('apply_link')
 def make_benchmark(self):
+    print('***wurf_runner.py::make_benchmark')
     if self.bld.has_tool_option('run_benchmarks'):
         make_run(self, 'benchmark')
     elif hasattr(self, 'link_task'):
@@ -139,6 +141,7 @@ def make_benchmark(self):
 
 
 def to_source_nodes(lst, path):
+    print('***wurf_runner.py::to_source_nodes')
     """
     Convert the input list into a list of source nodes.
     It is used to only find original source files, as opposed to the
@@ -162,6 +165,7 @@ def to_source_nodes(lst, path):
 
 
 def make_run(taskgen, run_type):
+    print('***wurf_runner.py::make_run')
     """
     Create the run task.
 
@@ -248,6 +252,7 @@ def make_run(taskgen, run_type):
 
 
 def summary(bld):
+    print('***wurf_runner.py::summary')
     """
     Display an execution summary:
 
@@ -276,6 +281,7 @@ def summary(bld):
 
 
 def set_exit_code(bld):
+    print('***wurf_runner.py::set_exit_code')
     """
     If any of the tests fails, waf will output the corresponding exit code.
     This is useful if you have an automated build system which need

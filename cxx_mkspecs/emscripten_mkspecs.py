@@ -8,6 +8,7 @@ from . import emscripten_common
 
 @conf
 def cxx_default_emscripten(conf):
+    print('***emscripten_mkspecs.py::cxx_default_emscripten')
     """
     Detect and setup the default em++ compiler
     """
@@ -16,6 +17,7 @@ def cxx_default_emscripten(conf):
 
 @conf
 def cxx_emscripten125(conf):
+    print('***emscripten_mkspecs.py::cxx_emscripten125')
     """
     Detect and setup the em++ 1.25 compiler
     """
@@ -24,6 +26,7 @@ def cxx_emscripten125(conf):
 
 @conf
 def cxx_emscripten126(conf):
+    print('***emscripten_mkspecs.py::cxx_emscripten126')
     """
     Detect and setup the em++ 1.26 compiler
     """
@@ -32,6 +35,7 @@ def cxx_emscripten126(conf):
 
 @conf
 def cxx_emscripten127(conf):
+    print('***emscripten_mkspecs.py::cxx_emscripten127')
     """
     Detect and setup the em++ 1.27 compiler
     """
@@ -40,14 +44,18 @@ def cxx_emscripten127(conf):
 
 @conf
 def cxx_emscripten130(conf):
+    print('***emscripten_mkspecs.py::cxx_emscripten130')
     """
     Detect and setup the em++ 1.30 compiler
     """
     conf.mkspec_emscripten_configure(1, 30)
 
+    
+
 
 @conf
 def cxx_emscripten134(conf):
+    print('***emscripten_mkspecs.py::cxx_emscripten134')
     """
     Detect and setup the em++ 1.34 compiler
     """
@@ -56,6 +64,7 @@ def cxx_emscripten134(conf):
 
 @conf
 def cxx_emscripten137(conf):
+    print('***emscripten_mkspecs.py::cxx_emscripten137')
     """
     Detect and setup the em++ 1.37 compiler
     """

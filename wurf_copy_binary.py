@@ -34,7 +34,7 @@ from waflib.TaskGen import after_method
 from waflib import Task, Errors, Node, Logs
 
 def to_base_path(ctx, copy_path):
-
+    print('***wurf_copy_binary.py::to_base_path')
     if isinstance(copy_path, str):
         return os.path.join(ctx.path.abspath(), copy_path)
     elif isinstance(copy_path, Node.Node):
@@ -46,6 +46,7 @@ def to_base_path(ctx, copy_path):
 @feature('copy_binary')
 @after_method('apply_link')
 def copy_binary(self):
+    print('***wurf_copy_binary.py::copy_binary')
     """Copy binary created by the link task to a given location."""
 
     if not hasattr(self, 'copy_path'):
@@ -78,6 +79,7 @@ def copy_binary(self):
 
 
 class CopyFileTask(Task.Task):
+    print('***wurf_copy_binary.py::class CopyFileTask')
     """Perform the copying of generated files."""
 
     color = 'PINK'
